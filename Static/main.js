@@ -81,9 +81,7 @@ main = function main() {
 
 var url = "https://s3.amazonaws.com/final-assets/nba_teams.json"
 // load the data
-    d3.request(url)
-    .header("Content-Type", "application/json")
-    .post(function (error, data){
+    d3.request(url, function (error, data) {
         console.log(data)
         var games = [];
         var teams = {};
