@@ -82,7 +82,7 @@ main = function main() {
 //var url = "https://s3.amazonaws.com/final-assets/nba_teams.json"
 // load the data
     //d3.request(url, function (error, data) {
-        console.log(data)
+        //console.log(data)
         var games = [];
         var teams = {
             "teams":[
@@ -269,27 +269,181 @@ main = function main() {
           ]}
 
         //data.teams.forEach(function (team) {
-        teams.forEach(function (team) {
-            teams[team.key] = team;
-            //console.log(teams[team.key])
+        teams.teams.forEach(function (team) {
+            teams.teams[team.key] = team;
+            console.log(teams.teams[team.key])
         });
 
-        d3.csv("https://s3.amazonaws.com/final-assets/nba_games.csv", function (csv) {
+        //d3.csv("https://s3.amazonaws.com/final-assets/nba_games.csv", function (csv) {
 
-            games = [];
-            csv.forEach(function (row) {
-                game = {};
-                game.round = Number(row.round);
-                game.away = row.away;
-                game.home = row.home;
-                game.away_prob = (row.away_prob);
-                game.home_prob = (row.home_prob);
-                game.awayWL = row.awayWL;
-                game.homeWL = row.homeWL;
-                game.point_spread = (row.point_spread);
-                games.push(game);
-                //console.log(game)
-            });
+        games = [
+                {
+                  "round": 0,
+                  "away": "MIN",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "HOU",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 3.895488,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "SAS",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "GSW",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 3.67704,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "NOP",
+                  "away_prob": 0.75,
+                  "home_prob": 0.25,
+                  "home": "POR",
+                  "awayWL": "Winner",
+                  "homeWL": "Loser",
+                  "point_spread": 2.040257,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "UTA",
+                  "away_prob": 0.75,
+                  "home_prob": 0.25,
+                  "home": "OKC",
+                  "awayWL": "Winner",
+                  "homeWL": "Loser",
+                  "point_spread": 0.43691,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "WAS",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "TOR",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 1.576325,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "MIL",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "BOS",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 0.289921,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "MIA",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "PHI",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 2.110307,
+                  "": ""
+                },
+                {
+                  "round": 0,
+                  "away": "IND",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "CLE",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 0.066977,
+                  "": ""
+                },
+                {
+                  "round": 1,
+                  "away": "UTA",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "HOU",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 0.403743,
+                  "": ""
+                },
+                {
+                  "round": 1,
+                  "away": "NOP",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "GSW",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 2.730806,
+                  "": ""
+                },
+                {
+                  "round": 1,
+                  "away": "CLE",
+                  "away_prob": 0.75,
+                  "home_prob": 0.25,
+                  "home": "TOR",
+                  "awayWL": "Winner",
+                  "homeWL": "Loser",
+                  "point_spread": 0.078969,
+                  "": ""
+                },
+                {
+                  "round": 1,
+                  "away": "PHI",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "BOS",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 1.132085,
+                  "": ""
+                },
+                {
+                  "round": 2,
+                  "away": "GSW",
+                  "away_prob": 0.75,
+                  "home_prob": 0.25,
+                  "home": "HOU",
+                  "awayWL": "Winner",
+                  "homeWL": "Loser",
+                  "point_spread": 5.627104,
+                  "": ""
+                },
+                {
+                  "round": 2,
+                  "away": "CLE",
+                  "away_prob": 0.75,
+                  "home_prob": 0.25,
+                  "home": "BOS",
+                  "awayWL": "Winner",
+                  "homeWL": "Loser",
+                  "point_spread": 2.400842,
+                  "": ""
+                },
+                {
+                  "round": 3,
+                  "away": "CLE",
+                  "away_prob": 0.25,
+                  "home_prob": 0.75,
+                  "home": "GSW",
+                  "awayWL": "Loser",
+                  "homeWL": "Winner",
+                  "point_spread": 3.455105,
+                  "": ""
+                }
+              ];
+            
 
             alluvial.data(games)
                 .layout();
@@ -466,8 +620,8 @@ main = function main() {
                 var spreadVal;
 
                 if (d.value != "L") {
-                    winner = teams[d.key];
-                    loser = teams[d.opponent];
+                    winner = teams.teams[d.key];
+                    loser = teams.teams[d.opponent];
                     //winVal = d.value;
                     winVal = d.wL;
                     //winVal = "Winner";
@@ -549,11 +703,11 @@ main = function main() {
 
             function getTeamColor(key) {
 
-                return teams[key].color;
+                return teams.teams[key].color;
             }
 
 
-        });
+        ;
 
     //});
 }();
