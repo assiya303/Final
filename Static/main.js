@@ -308,12 +308,12 @@ main = function main() {
 
                 gameWinnerName.text(winner.name).style("color", winner.color);
                 gameWinnerProb.text((winVal)).style("color", winner.color);
-                gameWinnerImg.attr("src", "logos/" + winner.key + ".png");
+                gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
                 pointSpread.text("Spread Prediction: " + (spreadVal)+ " points").style("color", winner.color);
 
                 gameLoserName.text(loser.name).style("color", loser.color);
                 gameLoserProb.text((loseVal)).style("color", loser.color);
-                gameLoserImg.attr("src", "logos/" + loser.key + ".png");
+                gameLoserImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + loser.key + ".png");
 
                 gTop.selectAll(".roundLabel")
                     .transition()
