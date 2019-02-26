@@ -79,9 +79,9 @@ main = function main() {
 
     var path = alluvial.link();
 
-
+var url = "https://s3.amazonaws.com/final-assets/nba_teams.json"
 // load the data
-    d3.json("https://s3.amazonaws.com/final-assets/nba_teams.json", function (error, data) {
+    d3.json(url, function (error, data) {
 
         var games = [];
         var teams = {};
