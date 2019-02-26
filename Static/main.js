@@ -81,7 +81,7 @@ main = function main() {
 
 
 // load the data
-    d3.json("nba_teams.json", function (error, data) {
+    d3.json("https://s3.amazonaws.com/final-assets/nba_teams.json", function (error, data) {
 
         var games = [];
         var teams = {};
@@ -92,7 +92,7 @@ main = function main() {
             //console.log(teams[team.key])
         });
 
-        d3.csv("nba_games.csv", function (csv) {
+        d3.csv("https://s3.amazonaws.com/final-assets/nba_games.csv", function (csv) {
 
             games = [];
             csv.forEach(function (row) {
