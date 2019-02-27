@@ -76,7 +76,7 @@ main = function main() {
     var alluvial = d3.alluvial()
         .nodeWidth(8)
         .nodePadding(30)
-        .size([width, height - chartTop-20]);
+        .size([width, height - chartTop-10]);
 
     var path = alluvial.link();
 
@@ -475,10 +475,10 @@ main = function main() {
 
             rounds.append("text")
                 .style("fill", "#3e4444")
-                .style("font-weight", 300)
+                .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 0 - margin.top)
+                .attr("y", 5 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -486,10 +486,10 @@ main = function main() {
 
             rounds.append("text")
                 .style("fill", "#3e4444")
-                .style("font-weight", 300)
+                .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 10 - margin.top)
+                .attr("y", 20 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -645,7 +645,7 @@ main = function main() {
                     //loseVal = d.opponentValue;
                     loseVal = d.opponentWL;
                     //loseVal = "Loser";
-                    spreadVal = d.pointSpread.toFixed(2);
+                    spreadVal = d.pointSpread;
                     correctVal=d.gameCorrect;
                 // }
                 // else {
@@ -665,7 +665,7 @@ main = function main() {
                 
                 gameWinnerImg.attr("src", "https://s3.amazonaws.com/final-assets/" + winner.key + ".png");
                 //gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
-                pointSpread.text("Spread Prediction: " + (spreadVal.toFixed(2))+ " points");
+                pointSpread.text("Spread Prediction: " + (spreadVal + " points");
                 gameCorrect.text("Correct Prediction? " + (correctVal));
 
                 gameLoserName.text(loser.name).style("color", loser.color);
