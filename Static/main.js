@@ -76,7 +76,7 @@ main = function main() {
     var alluvial = d3.alluvial()
         .nodeWidth(8)
         .nodePadding(30)
-        .size([width, height - chartTop]);
+        .size([width, height - chartTop-5]);
 
     var path = alluvial.link();
 
