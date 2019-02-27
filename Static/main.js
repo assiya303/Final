@@ -45,7 +45,7 @@ main = function main() {
     var gameLoserProb = d3.select("#game_loser_prob");
 
 
-    var availWidth = window.innerWidth - 30;
+    var availWidth = window.innerWidth - 50;
 
     var margin = {top: 10, right: 50, bottom: 10, left: 50},
         width = Math.max(availWidth, 800) - margin.left - margin.right,
@@ -76,7 +76,7 @@ main = function main() {
     var alluvial = d3.alluvial()
         .nodeWidth(8)
         .nodePadding(30)
-        .size([width, height - chartTop-10]);
+        .size([width, height - chartTop-5]);
 
     var path = alluvial.link();
 
@@ -478,7 +478,7 @@ main = function main() {
                 .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 5 - margin.top)
+                .attr("y", 10 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -489,7 +489,7 @@ main = function main() {
                 .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 20 - margin.top)
+                .attr("y", 25 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
