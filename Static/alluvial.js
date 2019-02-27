@@ -135,6 +135,7 @@ d3.alluvial = function() {
 
             node = {}
             node.pointSpread = game.point_spread;
+            node.gameCorrect = game.game_correct;
             node.wL = game.awayWL;
             node.opponentWL = game.homeWL;
             node.key = game.away;
@@ -156,6 +157,7 @@ d3.alluvial = function() {
 
             node = {}
             node.pointSpread = game.point_spread;
+            node.gameCorrect = game.game_correct;
             node.wL = game.homeWL;
             node.opponentWL = game.awayWL;
             node.key = game.home;
