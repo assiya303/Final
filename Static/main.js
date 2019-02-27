@@ -76,7 +76,7 @@ main = function main() {
     var alluvial = d3.alluvial()
         .nodeWidth(8)
         .nodePadding(30)
-        .size([width, height - chartTop-5]);
+        .size([width, height - chartTop]);
 
     var path = alluvial.link();
 
@@ -478,7 +478,7 @@ main = function main() {
                 .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 10 - margin.top)
+                .attr("y", 15 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -489,7 +489,7 @@ main = function main() {
                 .style("font-weight", 400)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 25 - margin.top)
+                .attr("y", 35 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
