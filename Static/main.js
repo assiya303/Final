@@ -665,7 +665,7 @@ main = function main() {
                 
                 gameWinnerImg.attr("src", "https://s3.amazonaws.com/final-assets/" + winner.key + ".png");
                 //gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
-                pointSpread.text("Spread Prediction: " + (spreadVal + " points");
+                pointSpread.text("Spread Prediction: " + (spreadVal)+ " points");
                 gameCorrect.text("Correct Prediction? " + (correctVal));
 
                 gameLoserName.text(loser.name).style("color", loser.color);
