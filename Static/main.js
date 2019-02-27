@@ -29,7 +29,7 @@ main = function main() {
     var fadeOpacity = .1;
     var rectStrokeOpacity = 0;
     var textFillOpacity = 1;
-    var chartTop = 100;
+    var chartTop = 200;
 
     var gameTip = d3.select("#game");
     var gameWinner = d3.select("#winner");
@@ -37,6 +37,7 @@ main = function main() {
     var gameWinnerImg = d3.select("#game_winner_img");
     var gameWinnerProb = d3.select("#game_winner_prob");
     var pointSpread = d3.select("#point_spread");
+    var gameCorrect = d3.select("#game_correct");
 
     var gameLoser = d3.select("#loser");
     var gameLoserName = d3.select("#game_loser_name");
@@ -74,8 +75,8 @@ main = function main() {
 // Set the alluvial diagram properties
     var alluvial = d3.alluvial()
         .nodeWidth(8)
-        .nodePadding(10)
-        .size([width, height - chartTop]);
+        .nodePadding(30)
+        .size([width, height - chartTop-20]);
 
     var path = alluvial.link();
 
@@ -277,172 +278,187 @@ main = function main() {
         //d3.csv("https://s3.amazonaws.com/final-assets/nba_games.csv", function (csv) {
 
         games = [
-                {
-                  "round": 0,
-                  "away": "MIN",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "HOU",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 3.895488,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "SAS",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "GSW",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 3.67704,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "NOP",
-                  "away_prob": 0.75,
-                  "home_prob": 0.25,
-                  "home": "POR",
-                  "awayWL": "Winner",
-                  "homeWL": "Loser",
-                  "point_spread": 2.040257,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "UTA",
-                  "away_prob": 0.75,
-                  "home_prob": 0.25,
-                  "home": "OKC",
-                  "awayWL": "Winner",
-                  "homeWL": "Loser",
-                  "point_spread": 0.43691,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "WAS",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "TOR",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 1.576325,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "MIL",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "BOS",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 0.289921,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "MIA",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "PHI",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 2.110307,
-                  "": ""
-                },
-                {
-                  "round": 0,
-                  "away": "IND",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "CLE",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 0.066977,
-                  "": ""
-                },
-                {
-                  "round": 1,
-                  "away": "UTA",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "HOU",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 0.403743,
-                  "": ""
-                },
-                {
-                  "round": 1,
-                  "away": "NOP",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "GSW",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 2.730806,
-                  "": ""
-                },
-                {
-                  "round": 1,
-                  "away": "CLE",
-                  "away_prob": 0.75,
-                  "home_prob": 0.25,
-                  "home": "TOR",
-                  "awayWL": "Winner",
-                  "homeWL": "Loser",
-                  "point_spread": 0.078969,
-                  "": ""
-                },
-                {
-                  "round": 1,
-                  "away": "PHI",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "BOS",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 1.132085,
-                  "": ""
-                },
-                {
-                  "round": 2,
-                  "away": "GSW",
-                  "away_prob": 0.75,
-                  "home_prob": 0.25,
-                  "home": "HOU",
-                  "awayWL": "Winner",
-                  "homeWL": "Loser",
-                  "point_spread": 5.627104,
-                  "": ""
-                },
-                {
-                  "round": 2,
-                  "away": "CLE",
-                  "away_prob": 0.75,
-                  "home_prob": 0.25,
-                  "home": "BOS",
-                  "awayWL": "Winner",
-                  "homeWL": "Loser",
-                  "point_spread": 2.400842,
-                  "": ""
-                },
-                {
-                  "round": 3,
-                  "away": "CLE",
-                  "away_prob": 0.25,
-                  "home_prob": 0.75,
-                  "home": "GSW",
-                  "awayWL": "Loser",
-                  "homeWL": "Winner",
-                  "point_spread": 3.455105,
-                  "": ""
-                }
-              ];
+            {
+              "round": 0,
+              "away": "MIN",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "HOU",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 3.895488,
+              "game_correct": "No",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "SAS",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "GSW",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 3.67704,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "NOP",
+              "away_prob": 0.75,
+              "home_prob": 0.25,
+              "home": "POR",
+              "awayWL": "Winner",
+              "homeWL": "Loser",
+              "point_spread": 2.040257,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "UTA",
+              "away_prob": 0.75,
+              "home_prob": 0.25,
+              "home": "OKC",
+              "awayWL": "Winner",
+              "homeWL": "Loser",
+              "point_spread": 0.43691,
+              "game_correct": "No",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "WAS",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "TOR",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 1.576325,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "MIL",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "BOS",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 0.289921,
+              "game_correct": "No",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "MIA",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "PHI",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 2.110307,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 0,
+              "away": "IND",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "CLE",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 0.066977,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 1,
+              "away": "UTA",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "HOU",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 0.403743,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 1,
+              "away": "NOP",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "GSW",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 2.730806,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 1,
+              "away": "CLE",
+              "away_prob": 0.75,
+              "home_prob": 0.25,
+              "home": "TOR",
+              "awayWL": "Winner",
+              "homeWL": "Loser",
+              "point_spread": 0.078969,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 1,
+              "away": "PHI",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "BOS",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 1.132085,
+              "game_correct": "No",
+              "": ""
+            },
+            {
+              "round": 2,
+              "away": "GSW",
+              "away_prob": 0.75,
+              "home_prob": 0.25,
+              "home": "HOU",
+              "awayWL": "Winner",
+              "homeWL": "Loser",
+              "point_spread": 5.627104,
+              "game_correct": "Yes",
+              "": ""
+            },
+            {
+              "round": 2,
+              "away": "CLE",
+              "away_prob": 0.75,
+              "home_prob": 0.25,
+              "home": "BOS",
+              "awayWL": "Winner",
+              "homeWL": "Loser",
+              "point_spread": 2.400842,
+              "game_correct": "No",
+              "": ""
+            },
+            {
+              "round": 3,
+              "away": "CLE",
+              "away_prob": 0.25,
+              "home_prob": 0.75,
+              "home": "GSW",
+              "awayWL": "Loser",
+              "homeWL": "Winner",
+              "point_spread": 3.455105,
+              "game_correct": "Yes",
+              "": ""
+            }
+          ];
             
 
             alluvial.data(games)
@@ -459,10 +475,10 @@ main = function main() {
 
             rounds.append("text")
                 .style("fill", "#3e4444")
-                .style("font-weight", 400)
+                .style("font-weight", 300)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 25 - margin.top)
+                .attr("y", 0 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -470,10 +486,10 @@ main = function main() {
 
             rounds.append("text")
                 .style("fill", "#3e4444")
-                .style("font-weight", 400)
+                .style("font-weight", 300)
                 .style("text-anchor", "middle")
                 .attr("class", "roundLabel")
-                .attr("y", 45 - margin.top)
+                .attr("y", 10 - margin.top)
                 .attr("x", function (d) {
                     return d;
                 })
@@ -618,6 +634,7 @@ main = function main() {
                 var winner, loser;
                 var winVal, loseVal;
                 var spreadVal;
+                var correctVal;
 
                 if (d.value != "L") {
                     winner = teams.teams[d.key];
@@ -629,6 +646,7 @@ main = function main() {
                     loseVal = d.opponentWL;
                     //loseVal = "Loser";
                     spreadVal = d.pointSpread;
+                    correctVal=d.gameCorrect;
                 // }
                 // else {
                 //     winner = teams[d.opponent];
@@ -645,7 +663,8 @@ main = function main() {
                 gameWinnerName.text(winner.name).style("color", winner.color);
                 gameWinnerProb.text((winVal)).style("color", winner.color);
                 gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
-                pointSpread.text("Spread Prediction: " + (spreadVal)+ " points").style("color", winner.color);
+                pointSpread.text("Spread Prediction: " + (spreadVal.toFixed(2))+ " points");
+                gameCorrect.text("Correct Prediction? " + (correctVal));
 
                 gameLoserName.text(loser.name).style("color", loser.color);
                 gameLoserProb.text((loseVal)).style("color", loser.color);
@@ -684,7 +703,7 @@ main = function main() {
                 gTop.selectAll(".roundLabel")
                     .transition()
                     .style("font-weight", "normal")
-                    .style("font-size", "12px");
+                    .style("font-size", "10px");
 
 
                 gameTip.transition().style("opacity", 0);
