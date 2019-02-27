@@ -564,7 +564,7 @@ main = function main() {
                 })
                 .style("fill-opacity", textFillOpacity)
                 .attr("text-anchor", "end")
-                .style("font-size", "10px")
+                .style("font-size", "12px")
                 .style("fill", function (d) {
                     return getTeamColor(d.key)
                 })
@@ -662,13 +662,15 @@ main = function main() {
 
                 gameWinnerName.text(winner.name).style("color", winner.color);
                 gameWinnerProb.text((winVal)).style("color", winner.color);
-                gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
+                
+                gameWinnerImg.attr("src", "https://s3.amazonaws.com/final-assets/" + winner.key + ".png");
+                //gameWinnerImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + winner.key + ".png");
                 pointSpread.text("Spread Prediction: " + (spreadVal.toFixed(2))+ " points");
                 gameCorrect.text("Correct Prediction? " + (correctVal));
 
                 gameLoserName.text(loser.name).style("color", loser.color);
                 gameLoserProb.text((loseVal)).style("color", loser.color);
-                gameLoserImg.attr("src", "https://s3.console.aws.amazon.com/s3/buckets/final-assets/" + loser.key + ".png");
+                gameLoserImg.attr("src", "https://s3.amazonaws.com/final-assets/" + loser.key + ".png");
 
                 gTop.selectAll(".roundLabel")
                     .transition()
@@ -703,7 +705,7 @@ main = function main() {
                 gTop.selectAll(".roundLabel")
                     .transition()
                     .style("font-weight", "normal")
-                    .style("font-size", "10px");
+                    .style("font-size", "12px");
 
 
                 gameTip.transition().style("opacity", 0);
