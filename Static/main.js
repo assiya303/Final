@@ -286,7 +286,7 @@ main = function main() {
               "home": "HOU",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 3.895488,
+              "point_spread": 3.895,
               "game_correct": "No",
               "": ""
             },
@@ -298,7 +298,7 @@ main = function main() {
               "home": "GSW",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 3.67704,
+              "point_spread": 3.677,
               "game_correct": "Yes",
               "": ""
             },
@@ -310,7 +310,7 @@ main = function main() {
               "home": "POR",
               "awayWL": "Winner",
               "homeWL": "Loser",
-              "point_spread": 2.040257,
+              "point_spread": 2.040,
               "game_correct": "Yes",
               "": ""
             },
@@ -322,7 +322,7 @@ main = function main() {
               "home": "OKC",
               "awayWL": "Winner",
               "homeWL": "Loser",
-              "point_spread": 0.43691,
+              "point_spread": 0.437,
               "game_correct": "No",
               "": ""
             },
@@ -334,7 +334,7 @@ main = function main() {
               "home": "TOR",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 1.576325,
+              "point_spread": 1.576,
               "game_correct": "Yes",
               "": ""
             },
@@ -346,7 +346,7 @@ main = function main() {
               "home": "BOS",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 0.289921,
+              "point_spread": 0.290,
               "game_correct": "No",
               "": ""
             },
@@ -358,7 +358,7 @@ main = function main() {
               "home": "PHI",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 2.110307,
+              "point_spread": 2.110,
               "game_correct": "Yes",
               "": ""
             },
@@ -370,7 +370,7 @@ main = function main() {
               "home": "CLE",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 0.066977,
+              "point_spread": 0.067,
               "game_correct": "Yes",
               "": ""
             },
@@ -382,7 +382,7 @@ main = function main() {
               "home": "HOU",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 0.403743,
+              "point_spread": 0.404,
               "game_correct": "Yes",
               "": ""
             },
@@ -394,7 +394,7 @@ main = function main() {
               "home": "GSW",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 2.730806,
+              "point_spread": 2.731,
               "game_correct": "Yes",
               "": ""
             },
@@ -406,7 +406,7 @@ main = function main() {
               "home": "TOR",
               "awayWL": "Winner",
               "homeWL": "Loser",
-              "point_spread": 0.078969,
+              "point_spread": 0.079,
               "game_correct": "Yes",
               "": ""
             },
@@ -418,7 +418,7 @@ main = function main() {
               "home": "BOS",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 1.132085,
+              "point_spread": 1.132,
               "game_correct": "No",
               "": ""
             },
@@ -430,7 +430,7 @@ main = function main() {
               "home": "HOU",
               "awayWL": "Winner",
               "homeWL": "Loser",
-              "point_spread": 5.627104,
+              "point_spread": 5.627,
               "game_correct": "Yes",
               "": ""
             },
@@ -442,7 +442,7 @@ main = function main() {
               "home": "BOS",
               "awayWL": "Winner",
               "homeWL": "Loser",
-              "point_spread": 2.400842,
+              "point_spread": 2.401,
               "game_correct": "No",
               "": ""
             },
@@ -454,7 +454,7 @@ main = function main() {
               "home": "GSW",
               "awayWL": "Loser",
               "homeWL": "Winner",
-              "point_spread": 3.455105,
+              "point_spread": 3.455,
               "game_correct": "Yes",
               "": ""
             }
@@ -645,7 +645,7 @@ main = function main() {
                     //loseVal = d.opponentValue;
                     loseVal = d.opponentWL;
                     //loseVal = "Loser";
-                    spreadVal = d.pointSpread;
+                    spreadVal = d.pointSpread.toFixed(2);
                     correctVal=d.gameCorrect;
                 // }
                 // else {
